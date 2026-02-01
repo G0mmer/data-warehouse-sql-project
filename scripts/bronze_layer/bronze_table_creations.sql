@@ -22,8 +22,8 @@ prd_key nvarchar(50),
 prd_nm nvarchar(50),
 prd_cost nvarchar(50),
 prd_line nvarchar(50),
-prd_end_dt datetime,
-prd_start_dt datetime
+prd_start_dt datetime,
+prd_end_dt datetime
 );
 
 if object_id ('bronze.crm_sales_details', 'U') is not null
@@ -32,9 +32,9 @@ create table bronze.crm_sales_details(
 sls_ord_num nvarchar(50),
 sls_prd_key nvarchar(50),
 sls_cust_id int,
-sls_order_dt date,
-sls_ship_dt date,
-sls_due_dt date,
+sls_order_dt int,
+sls_ship_dt int,
+sls_due_dt int,
 sls_sales int,
 sls_quantity int,
 sls_price int

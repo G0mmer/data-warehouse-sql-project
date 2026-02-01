@@ -1,7 +1,15 @@
 /* 
-path configuration
-   before running this querry mkae sure to change the variable for the path
-   where you store the cloned repository; aslo set query->sqlcmd mode to make the line 6 work
+Script purpose:
+	This script creates the procedure to generate the bronze layer within the db. It drops the tables if
+	they exist and create new one from the source files.
+
+Parameters:
+	path configuration
+	   before running this querry mkae sure to change the variable for the path
+	   where you store the cloned repository; aslo set query->sqlcmd mode to make the line 6 work
+
+Example Usage:
+	exec bronze.load_bronze
 */
 
 create or alter procedure bronze.load_bronze as 
