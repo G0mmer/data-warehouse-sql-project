@@ -20,12 +20,13 @@ if object_id ('silver.crm_prd_info', 'U') is not null
 	drop table silver.crm_prd_info
 create table silver.crm_prd_info(
 prd_id int,
+cat_id nvarchar(50),
 prd_key nvarchar(50),
 prd_nm nvarchar(50),
 prd_cost nvarchar(50),
 prd_line nvarchar(50),
-prd_start_dt datetime,
-prd_end_dt datetime,
+prd_start_dt date,
+prd_end_dt date,
 dwh_create_date datetime2 default getdate()
 );
 
@@ -35,9 +36,9 @@ create table silver.crm_sales_details(
 sls_ord_num nvarchar(50),
 sls_prd_key nvarchar(50),
 sls_cust_id int,
-sls_order_dt int,--no date as there are some 0 in csv
-sls_ship_dt int,
-sls_due_dt int,
+sls_order_dt date,
+sls_ship_dt date,
+sls_due_dt date,
 sls_sales int,
 sls_quantity int,
 sls_price int,
