@@ -228,8 +228,9 @@
 	select *
 	from bronze.erp_cust_az12
 	where gen = ''
-
+	----------
 	--validate
+	----------
 	select*
 	from silver.erp_cust_az12 e
 	left join silver.crm_cust_info c
@@ -243,3 +244,54 @@
 	select distinct(gen)
 	from silver.erp_cust_az12
 
+-------------------------------
+--check the bronze.erp_loc_a101
+-------------------------------	
+
+	select *
+	from bronze.erp_loc_a101 
+	where cid not in (select distinct (cst_key) from silver.crm_cust_info)
+
+	select distinct cntry
+	from bronze.erp_loc_a101
+
+	----------
+	--validate
+	----------
+
+	select replace(cid,'-','') as cid_
+	from silver.erp_loc_a101 
+	where replace(cid,'-','') not in (select distinct (cst_key) from silver.crm_cust_info)
+
+	select distinct cntry
+	from silver.erp_loc_a101
+
+------------------------------
+--check bronze.erp_px_cat_g1v2
+------------------------------
+
+select
+	id,
+	cat,
+	subcat,
+	maintenance
+from bronze.erp_px_cat_g1v2
+where id not in (select distinct cat_id from silver.crm_prd_info)
+
+select
+	id,
+	cat,
+	subcat,
+	maintenance
+from bronze.erp_px_cat_g1v2
+where id like 'CO%'
+
+select distinct cat_id from silver.crm_prd_info
+where cat_id not in (select
+	id
+from bronze.erp_px_cat_g1v2
+)
+SELECT  distinct
+      [cat_id]
+  FROM [DataWarehouse].[silver].[crm_prd_info]
+  where cat_id like 'CO%'
