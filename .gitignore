@@ -1,2 +1,4 @@
 .vs/
 .draw_io/
+*.bkp
+.$*
