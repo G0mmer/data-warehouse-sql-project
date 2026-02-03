@@ -2,6 +2,8 @@
 	Purpose of this query is to validate the silver layer sources and new objects in gold layer.
 	Make sure all silver and gold objects are already created
 */
+
+
 --------------------
 --csutomer dimension
 --------------------
