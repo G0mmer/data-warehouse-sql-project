@@ -259,8 +259,11 @@ begin
 		)
 
 		select
-			id,
-			cat,
+		--for one mismatch in both tables use a crm name as it is assumed to be a superior source 			case 
+			case
+				when id='CO_PD' then 'CO_PE'
+				else id end as id,
+			cat,	
 			subcat,
 			maintenance
 		from bronze.erp_px_cat_g1v2

@@ -284,7 +284,8 @@ select
 	subcat,
 	maintenance
 from bronze.erp_px_cat_g1v2
-where id like 'CO%'
+where id not in (select distinct cat_id from silver.crm_prd_info
+)
 
 select distinct cat_id from silver.crm_prd_info
 where cat_id not in (select

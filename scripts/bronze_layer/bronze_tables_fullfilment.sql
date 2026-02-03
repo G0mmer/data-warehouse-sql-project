@@ -21,6 +21,7 @@ declare @start_time datetime, @end_time datetime, @total_time_start datetime, @t
 		print'>>The path to cloned repository is correct; loading the bronze layer';
 
 
+		print 'loading crm tables';
 
 		:setvar ProjectPath "C:\Users\Cezary\Desktop\data-warehouse-sql-project"
 
@@ -72,6 +73,7 @@ declare @start_time datetime, @end_time datetime, @total_time_start datetime, @t
 		set @end_time = getdate();
 		print '>>Loading time: '+ cast(datediff(second,@start_time,@end_time) as nvarchar(50))+ ' seconds';
 		print' ';
+		print 'loading erp tables';
 
 		set @start_time = getdate();
 		print '>>Truncate the cust_az12 table'
