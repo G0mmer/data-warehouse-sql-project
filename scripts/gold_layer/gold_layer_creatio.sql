@@ -54,7 +54,7 @@ Usage:
 		c.cat as category_name,
 		c.subcat as subcategory,
 		c.maintenance as maintenance,
-		i.prd_cost as production_cost,
+		cast(i.prd_cost as int) as production_cost,
 		i.prd_line as production_line, 
 		i.prd_start_dt as production_date_start
 	from silver.crm_prd_info i
