@@ -59,5 +59,5 @@ Focuses on inventory performance and margins.
 * **Features:** "Top 10 Products" dynamic list, Profitability Matrix (Scatter Plot), Sales breakdown by Category hierarchy.
 * **Insight:** Identifies products with high sales volume but low margins versus high-margin "Gold" products.
 
-![Product Dashboard](analysis/screenshots/product_insight)
+![Product Dashboard](analysis/screenshots/product_insight.png)
 
