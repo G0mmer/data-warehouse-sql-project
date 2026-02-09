@@ -1,6 +1,6 @@
 # End-to-End Data Werhouse and Data Analytics Project in SQL
 
-![Dashboard Preview](analysis/screenshots/dashboard-demo.gif)
+![Dashboard Preview](analysis/screenshots/dashboard_demo.gif)
 *(Dynamic demo of the final Power BI Dashboard)*
 
 ## Acknowledgements & Inspiration
